@@ -3,15 +3,13 @@
 # Created     : 2018/06/28
 # Description : 世界杯赛况API
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 import json
 from flask import Flask, jsonify, request
 from peewee import fn
 from model import Group, Points, Matches
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route('/')
@@ -79,7 +77,8 @@ def json_data(data, message="", code=1):
     data_dict["data"] = data
     data_dict["message"] = message
     data_dict["code"] = code
-    return json.dumps(data_dict, ensure_ascii=False)
+    return jsonify(data_dict)
+    # return json.dumps(data_dict, ensure_ascii=False)
 
 
 if __name__ == '__main__':
