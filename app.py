@@ -47,7 +47,7 @@ def get_score_diff():
     """
     matches = Matches.select()
     # SQL查询目前不清楚怎么做，先用其他方法处理
-    matches_diff = {m.id: abs(m.score1 - m.score2) for m in matches}
+    matches_diff = {m.id: abs(m.score1 - m.score2) for m in matches if m.score1}
     sort = sorted(matches_diff.items(), key=lambda x: x[1], reverse=True)[:3]
     sort = sorted(sort, reverse=True)
     data = [Matches.get_one(id=s[0]).get_dict() for s in sort]
