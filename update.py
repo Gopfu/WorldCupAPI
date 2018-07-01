@@ -16,7 +16,9 @@ GROUP_URL = "http://2018.sina.com.cn/teams/"
 POINTS_URL = ("http://api.sports.sina.com.cn/?p=sports&s=sport_client&a=index&_sport_t_=football&"
     "_sport_s_=opta&_sport_a_=teamOrder&type=108&use_type=group")
 MATCHES_URL = ("http://api.sports.sina.com.cn/?p=sports&s=sport_client&a=index&_sport_t_=livecast"
-    "&_sport_a_=groupMatchesByType&type=108&limit=100&season=2017&dpc=1")
+    "&_sport_a_=matchesbytype&type=108&orderby=asc&fields=group%2Clivecast_id%2Cdate%2Cstatus"
+    "%2CTeam1%2CTeam2%2Ctime%2CTeam1Id%2CTeam2Id%2CScore1%2CScore2%2CMatchCity%2CNewsUrl%2CVideoUrl"
+    "%2CLiveUrl%2Cmatch_url%2CImgUrl%2COptaId%2CRound&limit=100&season=2017&dpc=1")
 
 
 def get_groups():

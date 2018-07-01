@@ -4,7 +4,7 @@ import copy
 import datetime
 from peewee import Model, CharField, DateTimeField, SqliteDatabase, IntegerField
 
-db = SqliteDatabase("worldcup1.db")
+db = SqliteDatabase("worldcup.db")
 
 
 class BaseModel(Model):

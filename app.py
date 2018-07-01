@@ -66,7 +66,7 @@ def get_advance():
     return json_data(data)
 
 
-def json_data(data, message="", code=1):
+def json_data(data, message="", code=0):
     """
     返回json格式数据
     data: 返回数据
